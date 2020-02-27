@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mellowood.CMSService.Dto
+namespace Mellowood.Contents.Dto
 {
     [AutoMapFrom(typeof(Content))]
     public class ContentDto : EntityDto

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mellowood.CMSService.Dto
+namespace Mellowood.Contents.Dto
 {
     public class GetCMSContentInput
     {

@@ -4,11 +4,11 @@ using System.Text;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using System.Threading.Tasks;
-using Mellowood.CMSService.Dto;
+using Mellowood.Contents.Dto;
 
-namespace Mellowood.CMSService
+namespace Mellowood.Contents
 {
-    public interface ICMSAppService : IApplicationService
+    public interface ICMSServiceAppService : IApplicationService
     {
 
         Task<ContentDto> GetCMSContent(GetCMSContentInput input);

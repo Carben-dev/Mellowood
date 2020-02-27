@@ -3,22 +3,22 @@ using Abp.Authorization;
 using Abp.AutoMapper;
 using Abp.ObjectMapping;
 using Abp.UI;
-using Mellowood.CMSService.Dto;
+using Mellowood.Contents.Dto;
 using Mellowood.ContentManageSystem;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mellowood.CMSService
+namespace Mellowood.Contents
 {
     //[AbpAuthorize]
-    public class CMSAppService : MellowoodAppServiceBase, ICMSAppService
+    public class CMSServiceAppService : MellowoodAppServiceBase, ICMSServiceAppService
     {
         private readonly IContentManager _contentManager;
         private readonly IObjectMapper _objectMapper;
 
-        public CMSAppService(IContentManager contentManager, IObjectMapper objectMapper)
+        public CMSServiceAppService(IContentManager contentManager, IObjectMapper objectMapper)
         {
             _contentManager = contentManager;
             _objectMapper = objectMapper;

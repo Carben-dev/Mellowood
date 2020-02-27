@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Mellowood.CMSService.Dto
+namespace Mellowood.Contents.Dto
 {
     public class InsertOrUpdateCMSContentInput
     {
