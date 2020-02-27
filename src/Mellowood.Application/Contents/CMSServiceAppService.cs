@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 
 namespace Mellowood.Contents
 {
-    //[AbpAuthorize]
     public class CMSServiceAppService : MellowoodAppServiceBase, ICMSServiceAppService
     {
         private readonly IContentManager _contentManager;
@@ -26,10 +25,7 @@ namespace Mellowood.Contents
 
         public async Task<ListResultDto<ContentDto>> GetAll()
         {
-            // call getall in content manager
             var @contents = await _contentManager.GetAllAsync();
-
-            // turn into dto and return
             return new ListResultDto<ContentDto>(ObjectMapper.Map<List<ContentDto>>(@contents));
         }
 

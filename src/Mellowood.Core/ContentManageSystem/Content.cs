@@ -9,14 +9,10 @@ using Abp.Domain.Entities.Auditing;
 namespace Mellowood.ContentManageSystem
 {
     [Table("AppContents")]
-    public class Content : Entity<int>//, IMustHaveTenant
+    public class Content : Entity<int>
     {
         public const int MaxTitleLength = 256;
         public const int MaxDescriptionLength = 64 * 1024;
-
-        //public virtual int TenantId { get; set; } // from IMustHaveTenant
-
-        //public virtual int Id { get; set; }
 
         [Required]
         [StringLength(MaxTitleLength)]
@@ -33,7 +29,6 @@ namespace Mellowood.ContentManageSystem
             var @content = new Content
             {
                 Id = id,
-                //TenantId = tenantId,
                 Title = title,
                 Description = description
             };

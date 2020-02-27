@@ -25,8 +25,6 @@ namespace Mellowood.ContentManageSystem
             .GetAll()
             .ToListAsync();
 
-            //if (contents.Count == 0) throw new UserFriendlyException("There is no content at all, try add some!");
-
             return contents;
         }
 
