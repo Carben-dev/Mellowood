@@ -1,13 +1,14 @@
-import { Component, Injector, ViewEncapsulation } from '@angular/core';
+import { Component, Injector, ViewEncapsulation, OnInit } from '@angular/core';
 import { AppComponentBase } from '@shared/app-component-base';
 import { MenuItem } from '@shared/layout/menu-item';
+import { CMSServiceServiceProxy, ContentDto, ListResultDtoOfContentDto } from '../../shared/service-proxies/service-proxies';
 
 @Component({
     templateUrl: './sidebar-nav.component.html',
     selector: 'sidebar-nav',
     encapsulation: ViewEncapsulation.None
 })
-export class SideBarNavComponent extends AppComponentBase {
+export class SideBarNavComponent extends AppComponentBase implements OnInit {
 
     menuItems: MenuItem[] = [
         new MenuItem(this.l('HomePage'), '', 'home', '/app/home'),
@@ -35,8 +36,11 @@ export class SideBarNavComponent extends AppComponentBase {
         ])
     ];
 
+    contentMenuItems : ContentDto[] = [];
+
     constructor(
-        injector: Injector
+        injector: Injector,
+        private _contentService : CMSServiceServiceProxy
     ) {
         super(injector);
     }
@@ -48,4 +52,21 @@ export class SideBarNavComponent extends AppComponentBase {
 
         return true;
     }
+
+    ngOnInit(): void {
+        this.loadContentSB();
+    }
+
+    loadContentSB() : void {
+        this._contentService.getAll()
+            .subscribe((result : ListResultDtoOfContentDto) => {
+                result.items.forEach(element => {
+                    this.menuItems.push(new MenuItem(element.title, '', '', '/app/cms/' + element.id));
+                });
+            })
+    }
+
+
+
+
 }

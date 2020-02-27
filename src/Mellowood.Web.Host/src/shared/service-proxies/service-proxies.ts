@@ -141,7 +141,7 @@ export class AccountServiceProxy {
 }
 
 @Injectable()
-export class CMSServiceProxy {
+export class CMSServiceServiceProxy {
     private http: HttpClient;
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
@@ -155,7 +155,7 @@ export class CMSServiceProxy {
      * @return Success
      */
     getAll(): Observable<ListResultDtoOfContentDto> {
-        let url_ = this.baseUrl + "/api/services/app/CMS/GetAll";
+        let url_ = this.baseUrl + "/api/services/app/CMSService/GetAll";
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ : any = {
@@ -207,7 +207,7 @@ export class CMSServiceProxy {
      * @return Success
      */
     getCMSContent(id: number | null | undefined): Observable<ContentDto> {
-        let url_ = this.baseUrl + "/api/services/app/CMS/GetCMSContent?";
+        let url_ = this.baseUrl + "/api/services/app/CMSService/GetCMSContent?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&"; 
         url_ = url_.replace(/[?&]$/, "");
@@ -261,7 +261,7 @@ export class CMSServiceProxy {
      * @return Success
      */
     insertOrUpdateCMSContent(input: InsertOrUpdateCMSContentInput | null | undefined): Observable<ContentDto> {
-        let url_ = this.baseUrl + "/api/services/app/CMS/InsertOrUpdateCMSContent";
+        let url_ = this.baseUrl + "/api/services/app/CMSService/InsertOrUpdateCMSContent";
         url_ = url_.replace(/[?&]$/, "");
 
         const content_ = JSON.stringify(input);

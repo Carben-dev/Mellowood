@@ -38,6 +38,8 @@ import { EditUserDialogComponent } from '@app/users/edit-user/edit-user-dialog.c
 import { ChangePasswordComponent } from './users/change-password/change-password.component';
 import { ResetPasswordDialogComponent } from './users/reset-password/reset-password.component';
 
+import { CMSComponent } from './CMS/CMS.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,9 @@ import { ResetPasswordDialogComponent } from './users/reset-password/reset-passw
     CreateUserDialogComponent,
     EditUserDialogComponent,
     ChangePasswordComponent,
-    ResetPasswordDialogComponent
+    ResetPasswordDialogComponent,
+
+    CMSComponent
   ],
   imports: [
     CommonModule,
